@@ -6,7 +6,9 @@
   "repository": "TODO",
   "author": "SAM CLI",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
   "scripts": {
     "test": "mocha tests/unit/"
   },

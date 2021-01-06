@@ -64,7 +64,7 @@ Resources:
   Child:
     Type: AWS::Serverless::Application
     Properties:
-      Location: ../../child.yaml
+      Location: Child/template.yaml
 Outputs:
   StockTradingStateMachineArn:
     Description: Stock Trading state machine ARN

@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'nested
+
+  Sample SAM Template for nested
+
+  '
+Resources:
+  TransactionTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: Id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+  StockSellerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: StockSellerFunction
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+Outputs:
+  TransactionTableName:
+    Value:
+      Ref: TransactionTable
+  StockSellerFunctionArn:
+    Value:
+      Fn::GetAtt:
+      - StockSellerFunction
+      - Arn
+  StockSellerFunctionName:
+    Value:
+      Ref: StockSellerFunction
