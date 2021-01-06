@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  nested
+
+  Sample SAM Template for nested
+
+Resources:
+  Child:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location: ./grand-child.yaml
+
+  StockCheckerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/stock-checker/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+
+Outputs:
+  TransactionTableName:
+    Value: !GetAtt Child.Outputs.TransactionTableName
+  StockCheckerFunctionArn:
+    Value: !GetAtt StockCheckerFunction.Arn
+  StockSellerFunctionArn:
+    Value: !GetAtt Child.Outputs.StockSellerFunctionArn
+  StockCheckerFunctionName:
+    Value: !Ref StockCheckerFunction
+  StockSellerFunctionName:
+    Value: !GetAtt Child.Outputs.StockSellerFunctionName
