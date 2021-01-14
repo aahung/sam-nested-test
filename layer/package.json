@@ -1,0 +1,11 @@
+{
+  "name": "layer",
+  "version": "1.0.0",
+  "description": "a layer",
+  "repository": "TODO",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}

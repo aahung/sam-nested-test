@@ -31,6 +31,18 @@ Resources:
       CodeUri: functions/stock-seller/
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
+      Layers:
+        - !Ref Node12201Runtime
+  
+  Node12201Runtime:
+    Type: AWS::Serverless::LayerVersion
+    Metadata:
+      BuildMethod: nodejs12.x
+    Properties:
+      LayerName: ALayer
+      ContentUri: layer
+      CompatibleRuntimes: 
+        - nodejs12.x
 
 Outputs:
   TransactionTableName:
