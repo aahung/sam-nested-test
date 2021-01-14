@@ -5,6 +5,16 @@ Description: >
 
   Sample SAM Template for nested
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: nested-app-test
+    Description: An example stack to test nested app support
+    Author: sam
+    SpdxLicenseId: Apache-2.0
+    HomePageUrl: https://github.com/user1/my-app-project
+    SemanticVersion: 0.0.1
+    SourceCodeUrl: https://github.com/user1/my-app-project
+
 Resources:
   StockTradingStateMachine:
     Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html

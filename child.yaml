@@ -5,6 +5,16 @@ Description: >
 
   Sample SAM Template for nested
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: nested-app-test-child
+    Description: An example stack to test nested app support
+    Author: sam
+    SpdxLicenseId: Apache-2.0
+    HomePageUrl: https://github.com/user1/my-app-project
+    SemanticVersion: '0.0.1'
+    SourceCodeUrl: https://github.com/user1/my-app-project
+
 Resources:
   Child:
     Type: AWS::Serverless::Application

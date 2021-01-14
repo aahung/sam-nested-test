@@ -4,8 +4,22 @@
 [function_build_definitions.a32b433b-9320-4720-9f9c-7f78fa21ebb6]
 codeuri = "functions/stock-buyer/"
 runtime = "nodejs12.x"
-source_md5 = ""
+source_md5 = "fbc07eeaac7c2aa75b8d4fd63a9d7fa1"
 packagetype = "Zip"
 functions = ["StockBuyerFunction"]
+
+[function_build_definitions.d7d27296-61d0-46ef-9e23-74d110aef54a]
+codeuri = "functions/stock-checker/"
+runtime = "nodejs12.x"
+source_md5 = "c44e5b7945c4b9c9730f5ea268b06d1b"
+packagetype = "Zip"
+functions = ["StockCheckerFunction"]
+
+[function_build_definitions.c4de90d0-109e-4240-9511-a703f2fb0797]
+codeuri = "functions/stock-seller/"
+runtime = "nodejs12.x"
+source_md5 = "aeebb4a8c753ccaa9126a7fb5a3bcb31"
+packagetype = "Zip"
+functions = ["StockSellerFunction"]
 
 [layer_build_definitions]
