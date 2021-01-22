@@ -24,9 +24,13 @@ Resources:
   StockCheckerFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
     Properties:
-      CodeUri: functions/stock-checker/
+      PackageType: Image
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
+    Metadata:
+      DockerTag: nodejs12.x-v1
+      DockerContext: functions/stock-checker/
+      Dockerfile: Dockerfile
 
 Outputs:
   TransactionTableName:
